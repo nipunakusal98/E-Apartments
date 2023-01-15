@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05BAC442-AC42-4F72-97EF-8121AEABE8DC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Eapartments</RootNamespace>
+    <AssemblyName>Eapartments</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApartmentCRUD.cs" />
+    <Compile Include="apartmentLeasingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apartmentLeasingUI.Designer.cs">
+      <DependentUpon>apartmentLeasingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apartmentUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apartmentUI.Designer.cs">
+      <DependentUpon>apartmentUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingCRUD.cs" />
+    <Compile Include="dbCon.cs" />
+    <Compile Include="buildingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>buildingUI.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DependantCRUD.cs" />
+    <Compile Include="EApartmentsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EApartmentsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ParkingLeasingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParkingLeasingUI.Designer.cs">
+      <DependentUpon>ParkingLeasingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="parkingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="parkingUI.Designer.cs">
+      <DependentUpon>parkingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dependantUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dependantUI.Designer.cs">
+      <DependentUpon>dependantUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OccupantCRUD.cs" />
+    <Compile Include="occupantUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="occupantUI.Designer.cs">
+      <DependentUpon>occupantUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="apartmentLeasingUI.resx">
+      <DependentUpon>apartmentLeasingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apartmentUI.resx">
+      <DependentUpon>apartmentUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buildingUI.resx">
+      <DependentUpon>buildingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dependantUI.resx">
+      <DependentUpon>dependantUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="occupantUI.resx">
+      <DependentUpon>occupantUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkingLeasingUI.resx">
+      <DependentUpon>ParkingLeasingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parkingUI.resx">
+      <DependentUpon>parkingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="EApartmentsDataSet.xsc">
+      <DependentUpon>EApartmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EApartmentsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EApartmentsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EApartmentsDataSet.xss">
+      <DependentUpon>EApartmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
