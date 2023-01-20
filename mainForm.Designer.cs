@@ -35,10 +35,12 @@ namespace Eapartments
             this.apartmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apartmentDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apartmentClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apartmentLeaseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.occupantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.occupantDetialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dependantDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apartmentLeaseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashobardDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +48,7 @@ namespace Eapartments
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
             this.buildingToolStripMenuItem,
             this.apartmentsToolStripMenuItem,
             this.occupantsToolStripMenuItem});
@@ -93,6 +96,13 @@ namespace Eapartments
             this.apartmentClassesToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
             this.apartmentClassesToolStripMenuItem.Text = "Apartment Classes";
             // 
+            // apartmentLeaseDetailsToolStripMenuItem
+            // 
+            this.apartmentLeaseDetailsToolStripMenuItem.Name = "apartmentLeaseDetailsToolStripMenuItem";
+            this.apartmentLeaseDetailsToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.apartmentLeaseDetailsToolStripMenuItem.Text = "Apartment Lease Details";
+            this.apartmentLeaseDetailsToolStripMenuItem.Click += new System.EventHandler(this.apartmentLeaseDetailsToolStripMenuItem_Click);
+            // 
             // occupantsToolStripMenuItem
             // 
             this.occupantsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -105,22 +115,31 @@ namespace Eapartments
             // occupantDetialsToolStripMenuItem
             // 
             this.occupantDetialsToolStripMenuItem.Name = "occupantDetialsToolStripMenuItem";
-            this.occupantDetialsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.occupantDetialsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.occupantDetialsToolStripMenuItem.Text = "Occupant Details";
             this.occupantDetialsToolStripMenuItem.Click += new System.EventHandler(this.occupantDetialsToolStripMenuItem_Click);
             // 
             // dependantDetailsToolStripMenuItem
             // 
             this.dependantDetailsToolStripMenuItem.Name = "dependantDetailsToolStripMenuItem";
-            this.dependantDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dependantDetailsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.dependantDetailsToolStripMenuItem.Text = "Dependant Details";
             this.dependantDetailsToolStripMenuItem.Click += new System.EventHandler(this.dependantDetailsToolStripMenuItem_Click);
             // 
-            // apartmentLeaseDetailsToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.apartmentLeaseDetailsToolStripMenuItem.Name = "apartmentLeaseDetailsToolStripMenuItem";
-            this.apartmentLeaseDetailsToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
-            this.apartmentLeaseDetailsToolStripMenuItem.Text = "Apartment Lease Details";
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashobardDetailsToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(96, 24);
+            this.toolStripMenuItem1.Text = "Dashboard";
+            // 
+            // dashobardDetailsToolStripMenuItem
+            // 
+            this.dashobardDetailsToolStripMenuItem.Name = "dashobardDetailsToolStripMenuItem";
+            this.dashobardDetailsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dashobardDetailsToolStripMenuItem.Text = "Dashobard Details";
+            this.dashobardDetailsToolStripMenuItem.Click += new System.EventHandler(this.dashobardDetailsToolStripMenuItem_Click);
             // 
             // frmmainForm
             // 
@@ -151,5 +170,7 @@ namespace Eapartments
         private System.Windows.Forms.ToolStripMenuItem dependantDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apartmentClassesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apartmentLeaseDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dashobardDetailsToolStripMenuItem;
     }
 }

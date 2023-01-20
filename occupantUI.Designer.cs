@@ -49,9 +49,19 @@ namespace Eapartments
             this.txtOccupantFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtOccupantID = new System.Windows.Forms.TextBox();
+            this.eApartmentsDataSet1 = new Eapartments.EApartmentsDataSet1();
             this.eApartmentsDataSet = new Eapartments.EApartmentsDataSet();
+            this.occupantNICPassportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.occupantEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.occupantTelephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.occupantAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.occupantLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.occupantFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.occupantIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbl_OccupantTableAdapter = new Eapartments.EApartmentsDataSet1TableAdapters.tbl_OccupantTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOccupant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,12 +152,21 @@ namespace Eapartments
             // dgvOccupant
             // 
             this.dgvOccupant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOccupant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.occupantIDDataGridViewTextBoxColumn,
+            this.occupantFirstNameDataGridViewTextBoxColumn,
+            this.occupantLastNameDataGridViewTextBoxColumn,
+            this.occupantAddressDataGridViewTextBoxColumn,
+            this.occupantTelephoneDataGridViewTextBoxColumn,
+            this.occupantEmailDataGridViewTextBoxColumn,
+            this.occupantNICPassportDataGridViewTextBoxColumn});
             this.dgvOccupant.Location = new System.Drawing.Point(449, 21);
             this.dgvOccupant.Name = "dgvOccupant";
             this.dgvOccupant.RowHeadersWidth = 51;
             this.dgvOccupant.RowTemplate.Height = 24;
             this.dgvOccupant.Size = new System.Drawing.Size(966, 351);
             this.dgvOccupant.TabIndex = 12;
+            this.dgvOccupant.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOccupant_CellContentClick);
             this.dgvOccupant.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOccupant_CellDoubleClick);
             // 
             // label6
@@ -247,10 +266,76 @@ namespace Eapartments
             this.txtOccupantID.Size = new System.Drawing.Size(201, 22);
             this.txtOccupantID.TabIndex = 0;
             // 
+            // eApartmentsDataSet1
+            // 
+            this.eApartmentsDataSet1.DataSetName = "EApartmentsDataSet1";
+            this.eApartmentsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // eApartmentsDataSet
             // 
             this.eApartmentsDataSet.DataSetName = "EApartmentsDataSet";
             this.eApartmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // occupantNICPassportDataGridViewTextBoxColumn
+            // 
+            this.occupantNICPassportDataGridViewTextBoxColumn.DataPropertyName = "occupant_NICPassport";
+            this.occupantNICPassportDataGridViewTextBoxColumn.HeaderText = "occupant_NICPassport";
+            this.occupantNICPassportDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.occupantNICPassportDataGridViewTextBoxColumn.Name = "occupantNICPassportDataGridViewTextBoxColumn";
+            this.occupantNICPassportDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // occupantEmailDataGridViewTextBoxColumn
+            // 
+            this.occupantEmailDataGridViewTextBoxColumn.DataPropertyName = "occupant_Email";
+            this.occupantEmailDataGridViewTextBoxColumn.HeaderText = "occupant_Email";
+            this.occupantEmailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.occupantEmailDataGridViewTextBoxColumn.Name = "occupantEmailDataGridViewTextBoxColumn";
+            this.occupantEmailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // occupantTelephoneDataGridViewTextBoxColumn
+            // 
+            this.occupantTelephoneDataGridViewTextBoxColumn.DataPropertyName = "occupant_Telephone";
+            this.occupantTelephoneDataGridViewTextBoxColumn.HeaderText = "occupant_Telephone";
+            this.occupantTelephoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.occupantTelephoneDataGridViewTextBoxColumn.Name = "occupantTelephoneDataGridViewTextBoxColumn";
+            this.occupantTelephoneDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // occupantAddressDataGridViewTextBoxColumn
+            // 
+            this.occupantAddressDataGridViewTextBoxColumn.DataPropertyName = "occupant_Address";
+            this.occupantAddressDataGridViewTextBoxColumn.HeaderText = "occupant_Address";
+            this.occupantAddressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.occupantAddressDataGridViewTextBoxColumn.Name = "occupantAddressDataGridViewTextBoxColumn";
+            this.occupantAddressDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // occupantLastNameDataGridViewTextBoxColumn
+            // 
+            this.occupantLastNameDataGridViewTextBoxColumn.DataPropertyName = "occupant_Last_Name";
+            this.occupantLastNameDataGridViewTextBoxColumn.HeaderText = "occupant_Last_Name";
+            this.occupantLastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.occupantLastNameDataGridViewTextBoxColumn.Name = "occupantLastNameDataGridViewTextBoxColumn";
+            this.occupantLastNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // occupantFirstNameDataGridViewTextBoxColumn
+            // 
+            this.occupantFirstNameDataGridViewTextBoxColumn.DataPropertyName = "occupant_First_Name";
+            this.occupantFirstNameDataGridViewTextBoxColumn.HeaderText = "occupant_First_Name";
+            this.occupantFirstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.occupantFirstNameDataGridViewTextBoxColumn.Name = "occupantFirstNameDataGridViewTextBoxColumn";
+            this.occupantFirstNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // occupantIDDataGridViewTextBoxColumn
+            // 
+            this.occupantIDDataGridViewTextBoxColumn.DataPropertyName = "occupant_ID";
+            this.occupantIDDataGridViewTextBoxColumn.HeaderText = "occupant_ID";
+            this.occupantIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.occupantIDDataGridViewTextBoxColumn.Name = "occupantIDDataGridViewTextBoxColumn";
+            this.occupantIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.occupantIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tbl_OccupantTableAdapter
+            // 
+            this.tbl_OccupantTableAdapter.ClearBeforeFill = true;
             // 
             // frmOccupant
             // 
@@ -260,9 +345,11 @@ namespace Eapartments
             this.Controls.Add(this.groupBox1);
             this.Name = "frmOccupant";
             this.Text = "Occupant";
+            this.Load += new System.EventHandler(this.frmOccupant_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOccupant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -290,6 +377,15 @@ namespace Eapartments
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtOccupantNICPassportID;
+        private EApartmentsDataSet1 eApartmentsDataSet1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occupantIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occupantFirstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occupantLastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occupantAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occupantTelephoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occupantEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn occupantNICPassportDataGridViewTextBoxColumn;
         private EApartmentsDataSet eApartmentsDataSet;
+        private EApartmentsDataSet1TableAdapters.tbl_OccupantTableAdapter tbl_OccupantTableAdapter;
     }
 }

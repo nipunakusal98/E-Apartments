@@ -16,7 +16,7 @@ namespace Eapartments
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmmainForm());
+            Application.Run(new frmParking());
         }
     }
 }

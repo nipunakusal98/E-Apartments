@@ -159,5 +159,25 @@ namespace Eapartments
             InitMode();
 
         }
+
+        private void dgvOccupant_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtOccupantID.Text = dgvOccupant.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtOccupantFirstName.Text = dgvOccupant.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtOccuapntLastName.Text = dgvOccupant.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtOccupantAddress.Text = dgvOccupant.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtTelephoneNo.Text = dgvOccupant.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtEmailAddress.Text = dgvOccupant.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtOccupantNICPassportID.Text = dgvOccupant.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            UpdateMode();
+        }
+
+        private void frmOccupant_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'eApartmentsDataSet1.tbl_Occupant' table. You can move, or remove it, as needed.
+            this.tbl_OccupantTableAdapter.Fill(this.eApartmentsDataSet1.tbl_Occupant);
+
+        }
     }
 }

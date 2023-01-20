@@ -33,7 +33,6 @@ namespace Eapartments
             this.txtApartmentID = new System.Windows.Forms.TextBox();
             this.txtBuildingID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtClassID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFloorID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,8 +42,9 @@ namespace Eapartments
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvApartment = new System.Windows.Forms.DataGridView();
             this.eApartmentsDataSet = new Eapartments.EApartmentsDataSet();
-            this.txtAvalibility = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.cmbAvalibilty = new System.Windows.Forms.ComboBox();
+            this.txtClassID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet)).BeginInit();
             this.SuspendLayout();
@@ -81,13 +81,6 @@ namespace Eapartments
             this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Building ID";
-            // 
-            // txtClassID
-            // 
-            this.txtClassID.Location = new System.Drawing.Point(147, 161);
-            this.txtClassID.Name = "txtClassID";
-            this.txtClassID.Size = new System.Drawing.Size(218, 22);
-            this.txtClassID.TabIndex = 5;
             // 
             // label3
             // 
@@ -169,13 +162,6 @@ namespace Eapartments
             this.eApartmentsDataSet.DataSetName = "EApartmentsDataSet";
             this.eApartmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtAvalibility
-            // 
-            this.txtAvalibility.Location = new System.Drawing.Point(147, 288);
-            this.txtAvalibility.Name = "txtAvalibility";
-            this.txtAvalibility.Size = new System.Drawing.Size(218, 22);
-            this.txtAvalibility.TabIndex = 34;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -185,12 +171,27 @@ namespace Eapartments
             this.label5.TabIndex = 33;
             this.label5.Text = "Avalibility";
             // 
+            // cmbAvalibilty
+            // 
+            this.cmbAvalibilty.FormattingEnabled = true;
+            this.cmbAvalibilty.Location = new System.Drawing.Point(135, 288);
+            this.cmbAvalibilty.Name = "cmbAvalibilty";
+            this.cmbAvalibilty.Size = new System.Drawing.Size(163, 24);
+            this.cmbAvalibilty.TabIndex = 34;
+            // 
+            // txtClassID
+            // 
+            this.txtClassID.Location = new System.Drawing.Point(147, 161);
+            this.txtClassID.Name = "txtClassID";
+            this.txtClassID.Size = new System.Drawing.Size(218, 22);
+            this.txtClassID.TabIndex = 5;
+            // 
             // frmApartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1291, 479);
-            this.Controls.Add(this.txtAvalibility);
+            this.Controls.Add(this.cmbAvalibilty);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvApartment);
             this.Controls.Add(this.btnDelete);
@@ -221,7 +222,6 @@ namespace Eapartments
         private System.Windows.Forms.TextBox txtApartmentID;
         private System.Windows.Forms.TextBox txtBuildingID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtClassID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFloorID;
         private System.Windows.Forms.Label label4;
@@ -231,7 +231,8 @@ namespace Eapartments
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvApartment;
         private EApartmentsDataSet eApartmentsDataSet;
-        private System.Windows.Forms.TextBox txtAvalibility;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbAvalibilty;
+        private System.Windows.Forms.TextBox txtClassID;
     }
 }

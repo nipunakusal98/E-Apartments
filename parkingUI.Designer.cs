@@ -1,7 +1,7 @@
 ﻿
 namespace Eapartments
 {
-    partial class parkingUI
+    partial class frmParking
     {
         /// <summary>
         /// Required designer variable.
@@ -32,15 +32,15 @@ namespace Eapartments
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtParkingID = new System.Windows.Forms.TextBox();
+            this.txtBuildingID = new System.Windows.Forms.TextBox();
+            this.cmbAvalibility = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvParking = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParking)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,27 +70,33 @@ namespace Eapartments
             this.label3.TabIndex = 2;
             this.label3.Text = "Avalibilty";
             // 
-            // textBox1
+            // txtParkingID
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 22);
-            this.textBox1.TabIndex = 3;
+            this.txtParkingID.Location = new System.Drawing.Point(124, 31);
+            this.txtParkingID.Name = "txtParkingID";
+            this.txtParkingID.Size = new System.Drawing.Size(205, 22);
+            this.txtParkingID.TabIndex = 3;
+            this.txtParkingID.TextChanged += new System.EventHandler(this.txtParkingID_TextChanged);
             // 
-            // textBox2
+            // txtBuildingID
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 22);
-            this.textBox2.TabIndex = 4;
+            this.txtBuildingID.Location = new System.Drawing.Point(124, 86);
+            this.txtBuildingID.Name = "txtBuildingID";
+            this.txtBuildingID.Size = new System.Drawing.Size(205, 22);
+            this.txtBuildingID.TabIndex = 4;
             // 
-            // comboBox1
+            // cmbAvalibility
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(124, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 24);
-            this.comboBox1.TabIndex = 5;
+            this.cmbAvalibility.FormattingEnabled = true;
+            this.cmbAvalibility.Items.AddRange(new object[] {
+            "Avalible",
+            "Booked",
+            "Renavating"});
+            this.cmbAvalibility.Location = new System.Drawing.Point(124, 149);
+            this.cmbAvalibility.Name = "cmbAvalibility";
+            this.cmbAvalibility.Size = new System.Drawing.Size(166, 24);
+            this.cmbAvalibility.TabIndex = 5;
+            this.cmbAvalibility.SelectedIndexChanged += new System.EventHandler(this.cmbAvalibility_SelectedIndexChanged);
             // 
             // btnDelete
             // 
@@ -100,6 +106,7 @@ namespace Eapartments
             this.btnDelete.TabIndex = 35;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -109,6 +116,7 @@ namespace Eapartments
             this.btnUpdate.TabIndex = 34;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -118,6 +126,7 @@ namespace Eapartments
             this.btnAdd.TabIndex = 33;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
             // 
@@ -127,36 +136,39 @@ namespace Eapartments
             this.btnSearch.TabIndex = 32;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // dataGridView1
+            // dgvParking
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(578, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(826, 249);
-            this.dataGridView1.TabIndex = 36;
+            this.dgvParking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParking.Location = new System.Drawing.Point(578, 12);
+            this.dgvParking.Name = "dgvParking";
+            this.dgvParking.RowHeadersWidth = 51;
+            this.dgvParking.RowTemplate.Height = 24;
+            this.dgvParking.Size = new System.Drawing.Size(826, 249);
+            this.dgvParking.TabIndex = 36;
+            this.dgvParking.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParking_CellContentClick);
             // 
-            // parkingUI
+            // frmParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1435, 300);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1417, 309);
+            this.Controls.Add(this.dgvParking);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbAvalibility);
+            this.Controls.Add(this.txtBuildingID);
+            this.Controls.Add(this.txtParkingID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "parkingUI";
+            this.Name = "frmParking";
             this.Text = "Parking Space Details";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmParking_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,13 +179,13 @@ namespace Eapartments
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtParkingID;
+        private System.Windows.Forms.TextBox txtBuildingID;
+        private System.Windows.Forms.ComboBox cmbAvalibility;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvParking;
     }
 }

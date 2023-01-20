@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Eapartments
 {
-    public partial class apartmentLeasingUI : Form
+    public partial class frmApartmentLeasing : Form
     {
-        public apartmentLeasingUI()
+        public frmApartmentLeasing()
         {
             InitializeComponent();
+        }
+
+        private void apartmentLeasingUI_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'eApartmentsDataSet.tbl_building' table. You can move, or remove it, as needed.
+            this.tbl_buildingTableAdapter.Fill(this.eApartmentsDataSet.tbl_building);
+
         }
     }
 }

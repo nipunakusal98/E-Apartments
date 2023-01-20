@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApartmentCRUD.cs" />
+    <Compile Include="ApartmentLeaseCRUD.cs" />
     <Compile Include="apartmentLeasingUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +62,12 @@
       <DependentUpon>apartmentUI.cs</DependentUpon>
     </Compile>
     <Compile Include="BuildingCRUD.cs" />
+    <Compile Include="dashboardUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboardUI.Designer.cs">
+      <DependentUpon>dashboardUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbCon.cs" />
     <Compile Include="buildingUI.cs">
       <SubType>Form</SubType>
@@ -75,6 +82,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EApartmentsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EApartmentsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EApartmentsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="loginUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginUI.Designer.cs">
+      <DependentUpon>loginUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkingCRUD.cs" />
     <Compile Include="ParkingLeasingUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +125,7 @@
     <Compile Include="occupantUI.Designer.cs">
       <DependentUpon>occupantUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParkLeaseCRUD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="apartmentLeasingUI.resx">
@@ -117,8 +137,14 @@
     <EmbeddedResource Include="buildingUI.resx">
       <DependentUpon>buildingUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dashboardUI.resx">
+      <DependentUpon>dashboardUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dependantUI.resx">
       <DependentUpon>dependantUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginUI.resx">
+      <DependentUpon>loginUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
@@ -151,6 +177,17 @@
     </None>
     <None Include="EApartmentsDataSet.xss">
       <DependentUpon>EApartmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EApartmentsDataSet1.xsc">
+      <DependentUpon>EApartmentsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EApartmentsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EApartmentsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EApartmentsDataSet1.xss">
+      <DependentUpon>EApartmentsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

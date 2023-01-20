@@ -63,7 +63,8 @@ namespace Eapartments
         {
             try
             {
-                string query = "INSERT INTO tbl_Apartment(apartment_ID, building_ID, class_ID, floor_ID,avalibility) VALUES('" + Apartment.apartmentID + "','" + Apartment.buildingID + "','" + Apartment.classID + "','" + Apartment.floorID + "','"+Apartment.apartmentAvalibility+"')";
+                string query = "INSERT INTO tbl_Apartment(apartment_ID, building_ID, class_ID, floor_ID,avalibility) VALUES('" + Apartment.apartmentID + "','" + Apartment.buildingID + "'," +
+                    "'" + Apartment.classID + "','" + Apartment.floorID + "','"+Apartment.apartmentAvalibility+"')";
                 string query2 = "INSERT INTO tbl_Apartment(apartment_ID, building_ID, class_ID, floor_ID) VALUES('{0}','{1}','{2}','{3}','{4}')";
                 string FinalQuery = string.Format(query2, Apartment.apartmentID, Apartment.buildingID, Apartment.classID, Apartment.floorID, Apartment.apartmentAvalibility);
 
@@ -119,7 +120,8 @@ namespace Eapartments
 
         internal bool UpdateApartment()
         {
-            string query = "UPDATE tbl_Apartment SET building_ID='" + Apartment.buildingID + "', class_ID='" + Apartment.classID + "', floor_ID='" + Apartment.floorID + "', avalibility ='" + Apartment.apartmentAvalibility + "' WHERE apartmant_ID = '"+Apartment.apartmentID+"' ";
+            string query = "UPDATE tbl_Apartment SET building_ID='" + Apartment.buildingID + "', class_ID='" + Apartment.classID + "', " +
+                "floor_ID='" + Apartment.floorID + "', avalibility ='" + Apartment.apartmentAvalibility + "' WHERE apartmant_ID = '"+Apartment.apartmentID+"' ";
             con.Open();
             int updateRecords = com.ExecuteNonQuery();
             if (updateRecords > 0) return true; else return false;

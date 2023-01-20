@@ -116,5 +116,51 @@ namespace Eapartments
                 frmdependant.Show();
             }
         }
+
+        private void dashobardDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            foreach (Form fb5 in Application.OpenForms)
+            {
+                if (fb5.Text == "Dashboard")
+                {
+                    IsOpen = true;
+                    fb5.Focus();
+                    break;
+                }
+            }
+
+            if (IsOpen == false)
+            {
+                frmDashboard frmdashboard = new frmDashboard();
+                frmdashboard.MdiParent = this;
+                frmdashboard.Dock = DockStyle.Fill;
+                frmdashboard.Show();
+            }
+        }
+
+        private void apartmentLeaseDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+
+            foreach (Form fb6 in Application.OpenForms)
+            {
+                if (fb6.Text == "Apartment Leasing")
+                {
+                    IsOpen = true;
+                    fb6.Focus();
+                    break;
+                }
+            }
+
+            if (IsOpen == false)
+            {
+                frmApartmentLeasing frmapartmentleasing = new frmApartmentLeasing();
+                frmapartmentleasing.MdiParent = this;
+                frmapartmentleasing.Dock = DockStyle.Fill;
+                frmapartmentleasing.Show();
+            }
+        }
     }
 }

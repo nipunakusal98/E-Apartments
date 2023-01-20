@@ -70,10 +70,8 @@ namespace Eapartments
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            BuildingCRUD buildingCRUD = new BuildingCRUD();
-            var data = buildingCRUD.GetBuilding(txtBuildingName.Text);
-
-            dgvBuilding.DataSource = data;
+            
+            
         }
 
         private void txtBuildingName_TextChanged(object sender, EventArgs e)
@@ -87,14 +85,14 @@ namespace Eapartments
         private void dgvBuilding_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            txtBuildingID.Text = dgvBuilding.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtBuildingName.Text = dgvBuilding.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtBuildingLocation.Text = dgvBuilding.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtNumOfFloors.Text = dgvBuilding.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtNumofApartments.Text = dgvBuilding.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtNumOfParkingSpaces.Text = dgvBuilding.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtTelephone.Text = dgvBuilding.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtEmail.Text = dgvBuilding.Rows[e.RowIndex].Cells[7].Value.ToString();
+            //txtBuildingID.Text = dgvBuilding.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //txtBuildingName.Text = dgvBuilding.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //txtBuildingLocation.Text = dgvBuilding.Rows[e.RowIndex].Cells[2].Value.ToString();
+            //txtNumOfFloors.Text = dgvBuilding.Rows[e.RowIndex].Cells[3].Value.ToString();
+            //txtNumofApartments.Text = dgvBuilding.Rows[e.RowIndex].Cells[4].Value.ToString();
+            //txtNumOfParkingSpaces.Text = dgvBuilding.Rows[e.RowIndex].Cells[5].Value.ToString();
+            //txtTelephone.Text = dgvBuilding.Rows[e.RowIndex].Cells[6].Value.ToString();
+            //txtEmail.Text = dgvBuilding.Rows[e.RowIndex].Cells[7].Value.ToString();
 
             UpdateMode();
         }
@@ -173,7 +171,28 @@ namespace Eapartments
 
         private void dgvBuilding_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtBuildingID.Text = dgvBuilding.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtBuildingName.Text = dgvBuilding.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtBuildingLocation.Text = dgvBuilding.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtNumOfFloors.Text = dgvBuilding.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtNumofApartments.Text = dgvBuilding.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtNumOfParkingSpaces.Text = dgvBuilding.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtTelephone.Text = dgvBuilding.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtEmail.Text = dgvBuilding.Rows[e.RowIndex].Cells[7].Value.ToString();
 
+            UpdateMode();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtBuildingID.Text = "";
+            txtBuildingName.Text = "";
+            txtBuildingLocation.Text = "";
+            txtNumOfFloors.Text = "";
+            txtNumofApartments.Text = "";
+            txtNumOfParkingSpaces.Text = "";
+            txtTelephone.Text = "";
+            txtEmail.Text = "";
         }
     }
 }

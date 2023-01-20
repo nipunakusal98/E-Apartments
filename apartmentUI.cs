@@ -34,7 +34,7 @@ namespace Eapartments
             txtApartmentID.Clear();
             txtClassID.Clear();
             txtFloorID.Clear();
-            txtAvalibility.Clear();
+          
         }
 
 

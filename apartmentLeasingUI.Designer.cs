@@ -1,7 +1,7 @@
 ﻿
 namespace Eapartments
 {
-    partial class apartmentLeasingUI
+    partial class frmApartmentLeasing
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,13 @@ namespace Eapartments
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tblbuildingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eApartmentsDataSet = new Eapartments.EApartmentsDataSet();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -41,8 +44,6 @@ namespace Eapartments
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -53,6 +54,11 @@ namespace Eapartments
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbl_buildingTableAdapter = new Eapartments.EApartmentsDataSetTableAdapters.tbl_buildingTableAdapter();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.tblbuildingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -84,11 +90,22 @@ namespace Eapartments
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.tblbuildingBindingSource;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(224, 79);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(224, 24);
             this.comboBox1.TabIndex = 3;
+            // 
+            // tblbuildingBindingSource
+            // 
+            this.tblbuildingBindingSource.DataMember = "tbl_building";
+            this.tblbuildingBindingSource.DataSource = this.eApartmentsDataSet;
+            // 
+            // eApartmentsDataSet
+            // 
+            this.eApartmentsDataSet.DataSetName = "EApartmentsDataSet";
+            this.eApartmentsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox2
             // 
@@ -155,22 +172,6 @@ namespace Eapartments
             this.label6.TabIndex = 11;
             this.label6.Text = "Lease Signed Date";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(224, 373);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 22);
-            this.textBox4.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(82, 373);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 17);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Lease Period";
-            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(224, 433);
@@ -205,6 +206,8 @@ namespace Eapartments
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label1);
@@ -214,9 +217,7 @@ namespace Eapartments
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -276,7 +277,27 @@ namespace Eapartments
             this.dataGridView1.Size = new System.Drawing.Size(800, 531);
             this.dataGridView1.TabIndex = 32;
             // 
-            // apartmentLeasingUI
+            // tbl_buildingTableAdapter
+            // 
+            this.tbl_buildingTableAdapter.ClearBeforeFill = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(82, 379);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 17);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Lease End Date";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(224, 377);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(230, 22);
+            this.dateTimePicker2.TabIndex = 18;
+            // 
+            // frmApartmentLeasing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,8 +308,11 @@ namespace Eapartments
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox1);
-            this.Name = "apartmentLeasingUI";
+            this.Name = "frmApartmentLeasing";
             this.Text = "Apartment Leasing Details";
+            this.Load += new System.EventHandler(this.apartmentLeasingUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tblbuildingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -310,8 +334,6 @@ namespace Eapartments
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
@@ -322,5 +344,10 @@ namespace Eapartments
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private EApartmentsDataSet eApartmentsDataSet;
+        private System.Windows.Forms.BindingSource tblbuildingBindingSource;
+        private EApartmentsDataSetTableAdapters.tbl_buildingTableAdapter tbl_buildingTableAdapter;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

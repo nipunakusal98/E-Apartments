@@ -51,6 +51,7 @@ namespace Eapartments
             this.btnDelete = new System.Windows.Forms.Button();
             this.eApartmentsDataSet = new Eapartments.EApartmentsDataSet();
             this.dgvBuilding = new System.Windows.Forms.DataGridView();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eApartmentsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuilding)).BeginInit();
             this.SuspendLayout();
@@ -242,11 +243,22 @@ namespace Eapartments
             this.dgvBuilding.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuilding_CellContentClick);
             this.dgvBuilding.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuilding_CellDoubleClick);
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(589, 602);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(113, 36);
+            this.btnClear.TabIndex = 25;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmBuildings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1780, 686);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.dgvBuilding);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -302,6 +314,7 @@ namespace Eapartments
         private System.Windows.Forms.Button btnDelete;
         private EApartmentsDataSet eApartmentsDataSet;
         private System.Windows.Forms.DataGridView dgvBuilding;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

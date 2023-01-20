@@ -66,9 +66,13 @@ namespace Eapartments
         {
             try
             {
-                string query = "INSERT INTO tbl_building(building_Name,building_Location,num_Of_Floors,num_Of_Apartments,num_Of_Parking_Spaces,telephone_Number,email_Address) VALUES ('" + Building.buildingName + "','" + Building.buildingLocation + "','" + Building.numOfFloors + "','" + Building.numOfApartments + "','" + Building.numOfParkingSpaces + "','" + Building.telephoneNumber + "','" + Building.emailAddress + "',)";
-                string query2 = "INSERT INTO tbl_building (building_Name,building_Location,num_Of_Floors,num_Of_Apartments,num_Of_Parking_Spaces,telephone_Number,email_Address) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
-                string FinalQuery = string.Format(query2, Building.buildingName, Building.buildingLocation, Building.numOfFloors, Building.numOfApartments, Building.numOfParkingSpaces, Building.telephoneNumber, Building.emailAddress);
+                string query = "INSERT INTO tbl_building(building_Name,building_Location,num_Of_Floors,num_Of_Apartments,num_Of_Parking_Spaces,telephone_Number,email_Address)" +
+                    " VALUES ('" + Building.buildingName + "','" + Building.buildingLocation + "','" + Building.numOfFloors + "','" + Building.numOfApartments + "','"
+                    + Building.numOfParkingSpaces + "','" + Building.telephoneNumber + "','" + Building.emailAddress + "',)";
+                string query2 = "INSERT INTO tbl_building (building_Name,building_Location,num_Of_Floors,num_Of_Apartments,num_Of_Parking_Spaces,telephone_Number,email_Address)" +
+                    " Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
+                string FinalQuery = string.Format(query2, Building.buildingName, Building.buildingLocation, Building.numOfFloors, Building.numOfApartments, 
+                    Building.numOfParkingSpaces, Building.telephoneNumber, Building.emailAddress);
 
                 
                 com = new SqlCommand(FinalQuery, con);
@@ -86,7 +90,7 @@ namespace Eapartments
 
             finally
             {
-                
+                con.Close();
             }
         }
 
@@ -95,7 +99,7 @@ namespace Eapartments
             try
             {
                 string query = "SELECT * FROM tbl_building WHERE building_Name LIKE '%" + text + "%'";
-                da = new SqlDataAdapter(query, con);
+                da = new SqlDataAdapter(query,con);
                 dt = new DataTable();
                 da.Fill(dt);
 
@@ -127,9 +131,14 @@ namespace Eapartments
             }
         }
 
+       
+
         internal bool UpdateBuilding() 
         {
-            string query = "UPDATE tbl_building set building_Name='"+Building.buildingName+ "', building_Location='" + Building.buildingLocation + "',num_Of_Floors ='"+Building.numOfFloors+ "',num_Of_Apartments='" + Building.numOfApartments + "',num_Of_Parking_Spaces='" + Building.numOfParkingSpaces + "',telephone_Number='" + Building.telephoneNumber+ "',email_Address='" + Building.emailAddress + "' WHERE building_ID ='"+Building.buildingID+"' ";
+            string query = "UPDATE tbl_building set building_Name='"+Building.buildingName+ "', " +
+                "building_Location='" + Building.buildingLocation + "',num_Of_Floors ='"+Building.numOfFloors+ "'" +
+                ",num_Of_Apartments='" + Building.numOfApartments + "',num_Of_Parking_Spaces='" + Building.numOfParkingSpaces + "'" +
+                ",telephone_Number='" + Building.telephoneNumber+ "',email_Address='" + Building.emailAddress + "' WHERE building_ID ='"+Building.buildingID+"' ";
             com = new SqlCommand(query, con);
 
             con.Open();
@@ -139,6 +148,7 @@ namespace Eapartments
         }
 
         internal bool DeleteBuilding()
+
         {
             string query = "DELETE tbl_building WHERE building_ID ='"+Building.buildingID+"'";
             com = new SqlCommand(query, con);

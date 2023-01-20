@@ -39,7 +39,6 @@ namespace Eapartments
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,12 +50,14 @@ namespace Eapartments
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label1);
@@ -66,7 +67,6 @@ namespace Eapartments
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
@@ -154,13 +154,6 @@ namespace Eapartments
             this.label3.TabIndex = 4;
             this.label3.Text = "Occupant ID";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(224, 324);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 22);
-            this.textBox4.TabIndex = 13;
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(224, 137);
@@ -173,9 +166,9 @@ namespace Eapartments
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(82, 324);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 17);
+            this.label7.Size = new System.Drawing.Size(107, 17);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Lease Period";
+            this.label7.Text = "Lease end date";
             // 
             // label4
             // 
@@ -255,6 +248,13 @@ namespace Eapartments
             this.dataGridView1.Size = new System.Drawing.Size(800, 531);
             this.dataGridView1.TabIndex = 36;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(224, 319);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(230, 22);
+            this.dateTimePicker2.TabIndex = 18;
+            // 
             // ParkingLeasingUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -287,7 +287,6 @@ namespace Eapartments
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
@@ -299,5 +298,6 @@ namespace Eapartments
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
